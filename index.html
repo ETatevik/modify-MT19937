@@ -13,23 +13,103 @@
 <body>
 
 	<div class="container">
+
 		<header>
 			<div class="menu">
 				<div class="btn home active">Описание работы</div>
-				<div class="btn matsumoto">Модификация генератора Матсумото</div>
+				<div class="btn matsumoto">Модификация MT19937</div>
 				<div class="btn encryption">Шифрования текста</div>
 				<div class="btn resultAndAnalysis">Анализ и результаты</div>
 			</div>
 		</header>
-		<section class="bigBody"></section>
-		<footer class="dateAath"></footer>
+
+		<section>
+			<div class="bigBody">
+					<div class="modal show" id="home">
+						<iframe src="https://onedrive.live.com/embed?cid=211BF764CDDFEF4A&resid=211BF764CDDFEF4A%211006&authkey=AOmjdsGQE8xReWE&em=2" scrolling="no"></iframe>
+					</div>
+
+					<div class="modal" id="matsumoto">
+						<form name="tempering">
+							<div>
+								<h2>Модификация данных</h2>
+								<code>	
+									<ul>
+										<li>1. y := x ⊕ ( &nbsp;x >> <input class="temp-input" type="text" placeholder="11" name="uuu"> )</li>
+										<li>2. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="7" name="sss"> ) & b)</li>
+										<li>3. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="15" name="ttt"> ) & c)</li>
+										<li>4. z := y ⊕ ( &nbsp;y >> <input class="temp-input" type="text" placeholder="l8" name="lll"> )</li>	
+									</ul>
+								</code>
+							</div>
+							<hr>
+							<div>
+								<h2>Информационные последовательности после модификации данных</h2>
+								<textarea name="randomNambers"   disabled class="area"></textarea>	
+							</div>
+
+							<div>
+								<label for="min">Минимальный элемент последовательности : 
+									<input type="text" disabled id="min" class="m-input">
+								</label>
+								<label for="max">Максимальный элемент последовательности :
+									<input type="text" disabled id="max" class="m-input">
+								</label>
+							</div>
+							<input type="button" value="Генерация" name="genert">
+						</form>
+					</div>
+
+					<div class="modal" id="encryption">
+						<form name="tempering">
+
+							<div class="box">
+								<div>
+									<h2>Модификация данных</h2>
+									<code>	
+										<ul>
+											<li>1. y := x ⊕ ( &nbsp;x >> <input class="temp-input" type="text" placeholder="11" name="uuu"> )</li>
+											<li>2. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="7" name="sss"> ) & b)</li>
+											<li>3. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="15" name="ttt"> ) & c)</li>
+											<li>4. z := y ⊕ ( &nbsp;y >> <input class="temp-input" type="text" placeholder="l8" name="lll"> )</li>	
+										</ul>
+									</code>
+								</div>
+								<div>
+									<h2>Ввод текста</h2>
+									<div>
+										<textarea name="textforencrypt"  class="area" placeholder="Нап: Hello world!"></textarea>	
+									</div>
+									<input type="button" name="randomText" value="Сгенерировать случайный текст">
+								</div>
+							</div>
+							
+							<div>
+								<input type="button" name="encry-dencry" value="Зашифровать и Дешифровать">
+
+								<div class="box t2">
+									<div>
+										<h2>Зашифрованный текст</h2>
+										<textarea name="encryptText" disabled   class="area"></textarea>
+									</div>
+									<div>
+										<h2>Дешифрованный текст</h2>
+										<textarea name="dencryptText" disabled   class="area"></textarea>
+									</div>
+								</div>
+
+							</div>
+
+						</form>
+					</div>
+
+					<div class="modal" id="resultAndAnalysis">***</div>
+			</div>
+
+			<footer class="dateAath"></footer>
+		</section>
+
 	</div>
-
-
-	<div class="modal" id="home"></div>
-	<div class="modal" id="matsumoto"></div>
-	<div class="modal" id="encryption"></div>
-	<div class="modal" id="resultAndAnalysis"></div>
 	
 </body>
 </html>

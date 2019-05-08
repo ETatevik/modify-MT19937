@@ -5,4 +5,188 @@
 	outline: 0px;
 	list-style-type: none;
 	text-decoration: none;
+	box-sizing: border-box;
+	border-radius: 15px;
+}
+
+.container{
+	width: 1400px;
+	margin: 15px auto;
+}
+
+.menu{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+section{
+	border: 2px solid #333;
+	border-top-width: 0;
+}
+
+.btn{
+	border: 2px solid #333;
+	width: 345px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+	height: 50px;
+	cursor: pointer;
+	background: linear-gradient( #000000, #434343);
+	color: white;
+	font-weight: bolder;
+}
+
+
+.active{
+	background: transparent;
+	color: black;
+	border-bottom: 0 !important;
+}
+.btn:hover{
+	background: linear-gradient( #000000, rgba(67, 67, 67, .5));
+	text-shadow: 1px 1px black;
+}
+
+.btn.active:hover{
+	background: transparent;
+	color: black;
+	color: black;
+	text-shadow: 0 0 0;
+}
+
+.bigBody{
+	width: 95%;
+	margin:  auto;
+	padding: 30px 0;
+}
+
+.modal{
+	display: none;
+	width: 100%;
+}
+
+.modal iframe{
+	height: 550px;
+	width: inherit;
+	border: 0px;
+}
+
+.dateAath{
+	padding: 25px;
+	margin: auto;
+	text-align: center;
+	font-size: 15px;
+}
+
+.dateAath a{
+	color: black;
+	text-decoration: underline;
+}
+
+.show{
+	display: block;
+}
+
+#matsumoto code,
+#encryption code{
+	display: block;
+	margin:20px 60px;
+	font-size: 25px;
+}
+
+.temp-input{
+	font-size: 25px;
+	width: 80px;
+	border: 1px solid;
+	text-align: center;
+}
+
+.temp-input:focus::placeholder{
+	color: transparent;
+}
+
+input[type="button"]{
+	padding: 20px 200px;
+	font-size: 20px;
+	cursor: pointer;
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	margin-left: auto;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+input[type="button"]:active{
+	-webkit-transform: scale(.8);
+	-ms-transform: scale(.8);
+	-o-transform: scale(.8);
+	transform: scale(.8);
+}
+h2{
+	margin-bottom: 20px;
+}
+
+
+.area{
+	width: 100%;
+	min-height: 300px;
+	resize: none;
+	font-size: 20px;
+	color: black;
+}
+
+hr{
+	border:1px solid #ddd;
+	width: 90%;
+	margin:25px auto;
+}
+
+label{
+	display: block;
+	font-size: 20px;
+	margin: 15px;
+}
+
+.m-input{
+	font-size: 25px;
+	width: 300px;
+	color: black
+}
+
+.box{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.box>div:last-child{
+	border-left: 1px solid #ddd;
+	padding-left: 25px;
+}
+
+textarea[name="textforencrypt"]{
+	border:1px solid black;
+	padding: 15px;
+	min-height: 100px !important;
+}
+
+input[name="encry-dencry"]{
+	margin-right: auto;
+}
+
+.t2 div{
+	width: 100%;
+}
+
+
+.t2 div:last-child{
+	border-left: 0;
 }
