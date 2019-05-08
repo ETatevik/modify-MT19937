@@ -9,6 +9,18 @@ jQuery(document).ready(function($) {
 	let merssen;	
   	let randomNumbers = [];
 
+  	// if($('.matsumoto.active')){
+  	// 	$('.btn.encryption').after('').css({
+			// display: 'block',
+			// width: '185px',
+			// height: '2px',
+			// backgroundColor: 'black',
+			// position: 'relative',
+			// left: '100%',
+			// top: '-4px'
+  	// 	});
+  	// }
+
 	$('input[name="genert"]').click(function(event) {
 		$('textarea[name="randomNambers"]').text('');
 		$("#min").val('');
@@ -54,9 +66,10 @@ jQuery(document).ready(function($) {
 		$(this).addClass('active');
 
 		$('.modal').removeClass('show');
-		if($(this).hasClass('home')){
-			$('#home').addClass('show');
-		}else if($(this).hasClass('matsumoto')){
+		// if($(this).hasClass('home')){
+		// 	$('#home').addClass('show');
+		// }else 
+		if($(this).hasClass('matsumoto')){
 			$('#matsumoto').addClass('show');
 		}else if($(this).hasClass('encryption')){
 			$('#encryption').addClass('show');
