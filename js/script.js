@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
 	let s = 7;
 	let t = 15;
 	let l = 18;
+	let nnn = 624;
 	let merssen;	
   	let randomNumbers = [];
 
@@ -38,21 +39,65 @@ jQuery(document).ready(function($) {
 		if($('input[name="lll"]').val()){
 			l = +$('input[name="lll"]').val();
 		}
+		if($('input[name="nnn"]').val()){
+			nnn = +$('input[name="nnn"]').val();
+		}
 
 		merssen = new MersenneTwister();	
 
   		setTimeout(function(){
-  			for(let i = 0; i < 624; i++){
+  			for(let i = 0; i < nnn; i++){
 				randomNumbers[i] = merssen.random();
 				$('textarea[name="randomNambers"]').text(`${$('textarea[name="randomNambers"]').text()+randomNumbers[i]}  `);		
 			}
 
-			randomNumbers.sort(pluse);
+			let sortedArr = randomNumbers.sort(pluse);
 
 	
-			$("#min").val(`${randomNumbers[0]}`);
-			$("#max").val(`${randomNumbers[randomNumbers.length-1]}`);
+			$("#min").val(`${sortedArr[0]}`);
+			$("#max").val(`${sortedArr[sortedArr.length-1]}`);
+
+
+
+			let counterRAE = [], g = 0;
+			let count = 1;
+
+	  		for(let i = 0; i < sortedArr.length; i += count){
+	  			count = 1;
+	  			for(let j = i + 1; j < randomNumbers.length; j++){
+	  				if(sortedArr[i] === sortedArr[j]){
+	  					count++;
+	  				}
+	  			}
+	  			counterRAE[g] = {x: sortedArr[i], y: count};
+	  			g++;
+	  		}
+
+	  		let chart = new CanvasJS.Chart("chartContainer", {
+		        animationEnabled: true,  
+			        axisY: {
+			            suffix: "",
+			            gridThickness: 1,
+			            tickColor: "#D3D8DD",
+			            gridColor: "#D3D8DD",
+			            gridDashType: "longDash"
+			        },
+			        axisX: {
+			            interval:0.1,
+			            gridThickness: 1,
+			            tickColor: "#D3D8DD",
+			            gridColor: "#D3D8DD",
+			            gridDashType: "longDash"
+			        },
+			        data: [{
+			            type: "splineArea",
+			            color: "rgba(16, 156, 241, .4)",
+			            dataPoints:counterRAE 
+			        }]
+		        });
+		    chart.render();
   		},500);
+
 
 	});
 	
@@ -162,11 +207,11 @@ jQuery(document).ready(function($) {
 	  if (seed == undefined) {
 	    seed = new Date().getTime();
 	  } 
-	  /* Period parameters */  
-	  this.N = 624;
-	  this.M = 397;
+	  /* Period parameters */    this.M = 397;
 	  this.MATRIX_A = 0x9908b0df;   /* constant vector a */
 	  this.UPPER_MASK = 0x80000000; /* most significant w-r bits */
+	  this.N = 624;
+	
 	  this.LOWER_MASK = 0x7fffffff; /* least significant r bits */
 	 
 	  this.mt = new Array(this.N); /* the array for the state vector */

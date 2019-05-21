@@ -8,12 +8,13 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/canvasjs.min.js"></script>
 	<script src="js/script.js"></script>
 </head>
 <body>
 
 	<div class="container">
-
+		
 		<header>
 			<div class="menu">
 				<!-- <div class="btn home active">Описание работы</div> -->
@@ -33,15 +34,24 @@
 						<form name="tempering">
 							<div>
 								<h2>Модификация данных</h2>
-								<code>	
-									<ul>
-										<li>1. y := x ⊕ ( &nbsp;x >> <input class="temp-input" type="text" placeholder="11" name="uuu"> )</li>
-										<li>2. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="7" name="sss"> ) & b)</li>
-										<li>3. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="15" name="ttt"> ) & c)</li>
-										<li>4. z := y ⊕ ( &nbsp;y >> <input class="temp-input" type="text" placeholder="l8" name="lll"> )</li>	
-									</ul>
-								</code>
+								<div class="code">
+									<code>	
+										<ul>
+											<li>1. y := x ⊕ ( &nbsp;x >> <input class="temp-input" type="text" placeholder="11" name="uuu"> )</li>
+											<li>2. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="7" name="sss"> ) & b)</li>
+											<li>3. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="15" name="ttt"> ) & c)</li>
+											<li>4. z := y ⊕ ( &nbsp;y >> <input class="temp-input" type="text" placeholder="l8" name="lll"> )</li>	
+										</ul>
+									</code>
+									<code>
+										<ul>
+											<li>n := <input class="temp-input" type="text" placeholder="624" name="nnn"></li>
+										</ul>
+									</code>
+								</div>
 							</div>
+
+							<input type="button" value="Генерация" name="genert">
 							<hr>
 							<div>
 								<h2>Информационные последовательности после модификации данных</h2>
@@ -56,7 +66,8 @@
 									<input type="text" disabled id="max" class="m-input">
 								</label>
 							</div>
-							<input type="button" value="Генерация" name="genert">
+
+							<div id="chartContainer"></div>
 						</form>
 					</div>
 
@@ -71,7 +82,9 @@
 											<li>1. y := x ⊕ ( &nbsp;x >> <input class="temp-input" type="text" placeholder="11" name="uuu"> )</li>
 											<li>2. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="7" name="sss"> ) & b)</li>
 											<li>3. y := y ⊕ ((&nbsp;y << <input class="temp-input" type="text" placeholder="15" name="ttt"> ) & c)</li>
-											<li>4. z := y ⊕ ( &nbsp;y >> <input class="temp-input" type="text" placeholder="l8" name="lll"> )</li>	
+											<li>4. z := y ⊕ ( &nbsp;y >> <input class="temp-input" type="text" placeholder="l8" name="lll"> )</li>
+											<br>
+											<li>n := <input class="temp-input" type="text" placeholder="624" name="nnn"></li>	
 										</ul>
 									</code>
 								</div>

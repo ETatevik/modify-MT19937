@@ -138,9 +138,7 @@ input[type="button"]{
 	font-size: 20px;
 	cursor: pointer;
 	display: block;
-	margin-top: 20px;
-	margin-bottom: 40px;
-	margin-left: auto;
+	margin:20px auto 40px;
 	-webkit-transition: .5s;
 	-o-transition: .5s;
 	transition: .5s;
@@ -162,6 +160,10 @@ h2{
 	resize: none;
 	font-size: 20px;
 	color: black;
+}
+
+textarea[name="randomNambers"]{
+	min-height: 150px;
 }
 
 hr{
@@ -214,4 +216,29 @@ input[name="encry-dencry"]{
 
 .t2 div:last-child{
 	border-left: 0;
+}
+
+#chartContainer{
+	height: 500px;
+	/*position: static !important;*/
+}
+
+.code{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.code code:first-child{
+	border-right: 2px solid #ddd;
+	border-radius: 0;
+	padding-right: 100px;
+}
+.code code:last-child{
+	width: 500px;
 }
